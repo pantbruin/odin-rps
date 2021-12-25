@@ -37,11 +37,11 @@ function game(){
 
     for(let i = 0; i < 5; i++){
         let userInput = prompt('Choose rock, paper or scissors!');
-        let result = playRound(userInput, computerPlay());
+        let winner = playRound(userInput, computerPlay());
 
-        if (result === 'player'){
+        if (winner === 'player'){
             playerScore += 1
-        } else if (result === 'computer'){
+        } else if (winner === 'computer'){
             computerScore += 1
         }
     }
