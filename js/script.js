@@ -11,7 +11,7 @@ function playRound(playerSelection, computerSelection){
          return 'tie'
     }
 
-    if (didPlayerWin(playerSelection, computerSelection)){
+    else if (didPlayerWin(playerSelection, computerSelection)){
          console.log(`You win this round! ${playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1)} beats ${computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1)}.`)
          return 'player'
     } else {
