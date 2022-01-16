@@ -7,9 +7,25 @@
     <title>Rock, Paper, Scissors</title>
   </head>
   <body>
-    <button name="rock" class="rock-btn">Rock</button>
-    <button name="paper" class="paper-btn">Paper</button>
-    <button name="scissors" class="scissors-btn">Scissors</button>
+    <div class="player-buttons-container">
+      <button name="rock" class="rock-btn">Rock</button>
+      <button name="paper" class="paper-btn">Paper</button>
+      <button name="scissors" class="scissors-btn">Scissors</button>
+    </div>
+
+    <div class="score-container">
+      Player Score: <span class="player-score">0</span>
+      <br />
+      Computer Score: <span class="computer-score">0</span>
+    </div>
+
+    <div class="round-number-container">
+      Round #: <span class="round-number">1</span>
+    </div>
+
+    <div class="round-result-text-container"></div>
+
+    <button style="display: none" class="reset-game-btn">Reset Game</button>
 
     <script src="js/script.js"></script>
   </body>
