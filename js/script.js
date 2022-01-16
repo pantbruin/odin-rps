@@ -1,10 +1,12 @@
+let playerScore = 0
+let computerScore = 0
+
 function computerPlay() {
     const computerChoices = ['rock', 'paper', 'scissors']
     return computerChoices[Math.floor(Math.random() * 3)]
 }
 
 function playRound(playerSelection, computerSelection){
-    playerSelection = playerSelection.toLowerCase()
 
     if(playerSelection === computerSelection){
          console.log(`It's a tie this round! Both you and the computer chose ${playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1)}.`)
@@ -31,27 +33,33 @@ function didPlayerWin(playerSelection, computerSelection){
     }
 }
 
-function game(){
-    let playerScore = 0
-    let computerScore = 0
+document.body.addEventListener('click', (e) => {
+    playRound(e.target.name, computerPlay())
+})
 
-    for(let i = 0; i < 5; i++){
-        let userInput = prompt('Choose rock, paper or scissors!');
-        let winner = playRound(userInput, computerPlay());
 
-        if (winner === 'player'){
-            playerScore += 1
-        } else if (winner === 'computer'){
-            computerScore += 1
-        }
-    }
+// function game(){
 
-    if (playerScore === computerScore){
-        console.log(`Wow! The game ends at a tie at ${playerScore} - ${computerScore}!`)
-    } else{ 
-    console.log (
-        playerScore > computerScore ? `You won the game 🎉! Your score is ${playerScore} and the computer's is ${computerScore}.` : `You lost this time 😞. Your score is ${playerScore} and the computer's is ${computerScore}.` 
-    )}
-}
+    // let playerScore = 0
+    // let computerScore = 0
 
-game()
+    // for(let i = 0; i < 5; i++){
+    //     let userInput = prompt('Choose rock, paper or scissors!');
+    //     let winner = playRound(userInput, computerPlay());
+
+    //     if (winner === 'player'){
+    //         playerScore += 1
+    //     } else if (winner === 'computer'){
+    //         computerScore += 1
+    //     }
+    // }
+
+    // if (playerScore === computerScore){
+    //     console.log(`Wow! The game ends at a tie at ${playerScore} - ${computerScore}!`)
+    // } else{ 
+    // console.log (
+    //     playerScore > computerScore ? `You won the game 🎉! Your score is ${playerScore} and the computer's is ${computerScore}.` : `You lost this time 😞. Your score is ${playerScore} and the computer's is ${computerScore}.` 
+    // )}
+// }
+
+// game()
