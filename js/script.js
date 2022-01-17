@@ -51,7 +51,7 @@ function resetGame() {
     
 }
 
-playerButtonsContainer.addEventListener('click', (e) => {
+function playerChoiceHandler(e) {
     roundNumberSpan.textContent = ++roundNumber
     let playerSelection = e.target.name;
 
@@ -78,6 +78,7 @@ playerButtonsContainer.addEventListener('click', (e) => {
         resetGameButton.style.display = 'block';
 
     }
-})
+}
 
+playerButtonsContainer.addEventListener('click', playerChoiceHandler)
 resetGameButton.addEventListener('click', resetGame)
